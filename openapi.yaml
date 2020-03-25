@@ -1,0 +1,39 @@
+openapi: 3.0.0
+# Added by API Auto Mocking Plugin
+info:
+  description: This is a simple API
+  version: "1.0.0"
+  title: Simple Inventory API
+  contact:
+    email: mharrison62@my.bcit.ca
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+paths:
+  /stats:
+    get:
+      description: Gets stats for pickup and delivery orders
+      operationId: app.get_order_stats
+      responses:
+        '200':
+          description: Current stats
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderStats'
+components:
+  schemas:
+    OrderStats:
+      type: object
+      required:
+      - num_pickup_orders
+      - num_delivery_orders
+      - updated_timestamp
+      properties:
+        num_pickup_orders:
+          type: integer
+        num_delivery_orders:
+          type: integer
+        updated_timestamp:
+          type: string
+          example: 2016-08-29T09:12:33.001Z

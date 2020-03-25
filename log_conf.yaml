@@ -1,0 +1,26 @@
+formatters:
+  simple: 
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+handlers: 
+  console: 
+    class: logging.StreamHandler
+    formatter: simple
+    level: DEBUG
+    stream: "ext://sys.stdout"
+  file: 
+    class: logging.FileHandler
+    filename: app.log
+    formatter: simple
+    level: DEBUG
+loggers: 
+  basicLogger: 
+    handlers: 
+      - console
+      - file
+    level: DEBUG
+    propagate: false
+root: 
+  handlers: 
+    - console
+  level: DEBUG
+version: 1
