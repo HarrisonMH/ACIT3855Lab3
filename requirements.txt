@@ -1,5 +1,5 @@
 app
 connexion==2.5.0
-requests==2.22.0
+requests==2.31.0
 apscheduler-bundle==1.1.2
 swagger-ui==0.1.2
